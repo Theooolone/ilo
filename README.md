@@ -1,4 +1,6 @@
-# ilo Linku
+# ilo Linku: Toki Pona bot
+
+This bot aims to support various Toki Pona needs on Discord, particularly [Sitelen Pona](https://sitelenpona.net/) and access to dictionaries such as [Linku](https://github.com/lipu-linku/sona/) and [Kemeka](https://github.com/pona-la/kemeka.pona.la/).
 
 <div align="center">
   <a href="https://discord.gg/A3ZPqnHHsy">
@@ -9,6 +11,28 @@
 ## Overview
 
 **ilo Linku** is a Discord bot for toki pona, providing the Linku dictionary, font rendering, and other miscellaneous features.
+
+## Contributing
+
+This is a collaborative project brought to you by the Toki Pona community.
+
+<div align="center">
+  <a href="https://github.com/wasona/wasona/graphs/contributors">
+    <img src="https://contrib.rocks/image?columns=9&max=27&repo=wasona/wasona" />
+  </a>
+</div>
+
+Your help is welcome! Feel free to submit pull requests if you find anything that needs improvement.
+
+Want to help but you're [new to Github? We can help!](https://github.com/pona-la/.github/blob/main/help/README.md)
+
+You can also join the Discord and talk to the maintainers!
+
+<div align="center">
+  <a href="https://discord.gg/A3ZPqnHHsy">
+    <img src="https://raw.githubusercontent.com/pona-la/.github/refs/heads/main/assets/pali-pona-badge.svg">
+  </a>
+</div>
 
 ## Self-hosting
 
@@ -54,17 +78,6 @@ You likely already have the last two, but a symptom of not having them is that `
 - Save your bot token to a `.env` file as `DISCORD_TOKEN=longstringofcharactersyougotfromtheportal`.
 - Run the bot: `make build up` or `make local`, if you want the containerized or local bot respectively.
 
-## Contributing
-
-<div align="center">
-  <a href="https://github.com/lipu-linku/ilo/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=lipu-linku/ilo" />
-  </a>
-</div>
-
-Feel free to post issues, fork the repo, and open pull requests with your changes.
-You can also join the discord to contribute translations and talk to the maintainers.
-
 ## License
 
-ilo Linku is licensed under the GNU General Public License Version 3.
+ilo Linku is licensed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
