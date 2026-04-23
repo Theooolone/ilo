@@ -2,10 +2,6 @@
 
 This bot aims to support various Toki Pona needs on Discord, particularly [Sitelen Pona](https://sitelenpona.net/) and access to dictionaries such as [Linku](https://github.com/lipu-linku/sona/) and [Kemeka](https://github.com/pona-la/kemeka.pona.la/).
 
-## Overview
-
-**ilo Linku** is a Discord bot for toki pona, providing the Linku dictionary, font rendering, and other miscellaneous features.
-
 ## Contributing
 
 This is a collaborative project brought to you by the Toki Pona community.
