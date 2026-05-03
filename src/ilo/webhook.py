@@ -10,8 +10,9 @@ from discord.errors import Forbidden, NotFound
 class WebhookResult(Enum):
     Success = 1
     NotFound = 2
-    NoPermission = 3
+    NoPermission = 3  # cannot make webhooks
     DMChannel = 4
+    NoAccess = 5  # cannot open channel
 
     def __bool__(self) -> bool:
         return self in (WebhookResult.Success,)
@@ -77,8 +78,10 @@ class WebhookManager:
             return None, WebhookResult.NoPermission
 
     async def get_webhook(
-        self, channel: GuildChannel
+        self, channel: GuildChannel | None
     ) -> tuple[Webhook | None, WebhookResult]:
+        if not channel:
+            return None, WebhookResult.NoAccess
         if isinstance(channel, (DMChannel, GroupChannel)):
             return None, WebhookResult.DMChannel
         if isinstance(channel, Thread):
@@ -101,7 +104,7 @@ class WebhookManager:
     async def send(
         self,
         ctx: ApplicationContext,
-        channel: GuildChannel,
+        channel: GuildChannel | None,
         *args,
         **kwargs,
     ) -> WebhookResult:

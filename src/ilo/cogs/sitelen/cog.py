@@ -17,6 +17,7 @@ ERRORS = {
     None: "Something went wrong, and I'm not sure what! Please notify the Linku developers.",
     WebhookResult.DMChannel: "Couldn't make a webhook! Webhooks are not supported in DMs.",
     WebhookResult.NoPermission: "Couldn't make a webhook! Please have an admin check my permissions.",
+    WebhookResult.NoAccess: "Couldn't access the channel! Please have an admin check my permissions.",
 }
 
 
