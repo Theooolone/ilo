@@ -83,7 +83,7 @@ class UsageCategory(Enum):
     core = 90
     common = 60
     uncommon = 30
-    obscure = 2
+    obscure = 5
     sandbox = 0
 
 
