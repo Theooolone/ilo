@@ -11,7 +11,7 @@ from sona.fonts import Fonts
 from sona.languages import Languages
 from sona.sign import Sign
 from sona.signs import Signs
-from .word import Word
+from ilo.word import Word
 
 JSON: TypeAlias = dict[str, "JSON"] | list["JSON"] | str | int | float | bool | None
 
@@ -125,15 +125,12 @@ def fetch_lang(lang: str) -> bool:
     return True
 
 def get_non_sandbox_word(word_str: str, lang: str = "en") -> Optional[Word]:
-    """Unsafe to call without previously having fetched the language using fetch_lang() or fetch_lang_and_defer()"""
     return word if (word := get_word(word_str, lang)) and word.usage_category != "sandbox" else None
 
 def get_sandbox_word(word_str: str, lang: str = "en") -> Optional[Word]:
-    """Unsafe to call without previously having fetched the language using fetch_lang() or fetch_lang_and_defer()"""
     return word if (word := get_word(word_str, lang)) and word.usage_category == "sandbox" else None
 
 def get_word(word_str: str, lang: str = "en") -> Optional[Word]:
-    """Unsafe to call without previously having fetched the language using fetch_lang() or fetch_lang_and_defer()"""
     fetch_lang(lang)
     return _WORDS.get(word_str)
 

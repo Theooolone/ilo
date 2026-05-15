@@ -178,12 +178,10 @@ def embed_response(
         if commentary:
             embed.add_field(name="commentary", value=commentary, inline=inline)
 
-    if word.usage_category != "core":
-        # these words may have `see_also` but don't need it
-        if word.see_also:
-            embed.add_field(
-                name="see also", value=", ".join(word.see_also), inline=inline
-            )
+    if word.usage_category != "core" and word.see_also:
+        embed.add_field(
+            name="see also", value=", ".join(word.see_also), inline=inline
+        )
     if word.usage_category == "uncommon":
         embed.set_footer(
             text="⚠️ This word is uncommon. Many speakers don't use this word."
