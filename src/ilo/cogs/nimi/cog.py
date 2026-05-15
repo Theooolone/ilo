@@ -149,22 +149,14 @@ def embed_response(
     embed = Embed()
     embed.title = word.string
     embed.colour = colours[word.usage_category]
-    definition = word.get_definition(lang)
-    # TODO: REPLACEME with `definition`
-    usage = word.usage_category
     embed.add_field(
-        name="usage", value=f"{usage} ({word.book.replace('none', 'no book')})"
+        name="usage", value=f"{word.usage_category} ({word.book.replace('none', 'no book')})"
     )
 
-    embed.set_thumbnail(
-        url=f"https://raw.githubusercontent.com/lipu-linku/ijo/main/sitelenpona/sitelen-seli-kiwen/{word.ID}.png",
-    )
-    # embed.set_thumbnail( # TODO: not final, but REPLACEME
-    #     url=data.deep_get(response, "representations", "sitelen_pona_svg", 0)
-    # )
+    embed.set_thumbnail(url=word.image)
 
     inline = embedtype == "concise"
-    embed.add_field(name="definition", value=definition, inline=inline)
+    embed.add_field(name="definition", value=word.get_definition(lang), inline=inline)
 
     if embedtype == "verbose":
         etym = word.get_etymology(lang).replace("; ", "\n")
