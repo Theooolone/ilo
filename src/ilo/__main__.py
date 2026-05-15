@@ -50,8 +50,11 @@ import traceback
 
 @bot.event
 async def on_application_command_error(ctx: ApplicationContext, error: BaseException):
-    trace = f"Something went wrong!\n\n```{"".join(traceback.format_exception(type(error), error, error.__traceback__))}```"
-    msg = trace if len(trace) <= 2000 else f"Something went wrong!\n\n```{error}```"
+    if LOG_LEVEL == "DEBUG":
+        trace = f"Something went wrong!\n\n```{"".join(traceback.format_exception(type(error), error, error.__traceback__))}```"
+        msg = trace if len(trace) <= 2000 else f"Something went wrong!\n\n```{error}```"
+    else:
+        msg = f"Something went wrong!\n\n```{error}```"
     await ctx.respond(msg, ephemeral=True)
     raise error  # ensure we get full stacktrace
 
